@@ -9,11 +9,6 @@ on:
 jobs:
   test-and-report:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: Evaluacion_M4
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
