@@ -1,3 +1,5 @@
+package com.healthtrack;
+
 public class Usuario {
     private String nombre;
     private double peso;

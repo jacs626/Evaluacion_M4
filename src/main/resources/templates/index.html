@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HealthTrack Java</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+    <h1>Usuario: <span th:text="${nombre}"></span></h1>
+    <p>Peso actual: <span th:text="${peso}"></span> kg</p>
+
+    <form method="post" action="/actualizar">
+        <input type="number" step="0.1" name="peso" required>
+        <button type="submit">Actualizar peso</button>
+    </form>
+
+    <p th:if="${mensaje}" th:text="${mensaje}"></p>
+</body>
+</html>
