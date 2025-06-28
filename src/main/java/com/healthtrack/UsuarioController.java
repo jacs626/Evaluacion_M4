@@ -35,7 +35,7 @@ public class UsuarioController {
     //EndPoints para JMeter
 
     @ResponseBody
-    @GetMapping("/api/usuarios")
+    @GetMapping(value = "/api/usuarios", produces = "application/json; charset=UTF-8")
     public List<Usuario> getUsuarios() {
         return usuarios;
     }

@@ -1,0 +1,31 @@
+SoapUI 5.8.0 TestCase Runner
+16:23:40,546 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\JACS\soapui-settings.xml]
+16:23:43,923 INFO  [PluginManager] Adding plugin from [C:\Users\JACS\.soapuios\plugins\ready-mqtt-plugin-dist.jar]
+16:23:44,000 INFO  [PluginManager] Adding plugin from [C:\Users\JACS\.soapuios\plugins\readyapi-postman-1.0.1.jar]
+16:23:48,166 INFO  [PluginManager] Adding plugin from [C:\Users\JACS\.soapuios\plugins\ready-uxm-plugin-os-1.0.3.jar]
+16:23:50,157 INFO  [PluginManager] 3 plugins loaded in 6245 ms
+16:23:50,157 INFO  [DefaultSoapUICore] All plugins loaded
+16:23:53,299 INFO  [WsdlProject] Loaded project from [file:/D:/DevOps/M4/healthtrack/tests/SoapUI/HealthTrackSoapUI.xml]
+16:23:53,345 INFO  [SoapUITestCaseRunner] Running SoapUI tests in project [HealthTrack]
+16:23:53,346 INFO  [SoapUITestCaseRunner] Running TestCase [Validación Get usuarios]
+16:23:53,438 INFO  [SoapUITestCaseRunner] Running SoapUI testcase [Validación Get usuarios]
+16:23:53,454 INFO  [SoapUITestCaseRunner] running step [REST Request]
+16:23:56,863 INFO  [SoapUITestCaseRunner] Assertion [Validar Respuesta del Servidor] has status VALID
+16:23:56,865 INFO  [SoapUITestCaseRunner] Assertion [Validar GET nombre] has status VALID
+16:23:56,865 INFO  [SoapUITestCaseRunner] Assertion [Validar GET peso] has status VALID
+16:23:56,943 INFO  [SoapUITestCaseRunner] Finished running SoapUI testcase [Validación Get usuarios], time taken: 536ms, status: FINISHED
+16:23:56,972 INFO  [SoapUITestCaseRunner] TestCase [Validación Get usuarios] finished with status [FINISHED] in 536ms
+
+SoapUI 5.8.0 TestCaseRunner Summary
+-----------------------------
+Time Taken: 3626ms
+Total TestSuites: 0
+Total TestCases: 1 (0 failed)
+Total TestSteps: 1
+Total Request Assertions: 3
+Total Failed Assertions: 0
+Total Exported Results: 1
+16:23:57,199 WARN  [Tools] Could not delete temporary directory C:\Users\JACS\AppData\Local\Temp\0cfc695b-6620-48ac-840e-69ff4f6e83f4
+16:23:57,199 WARN  [Tools] Could not delete temporary directory C:\Users\JACS\AppData\Local\Temp\0cfc695b-6620-48ac-840e-69ff4f6e83f4
+16:23:57,203 WARN  [Tools] Could not delete temporary directory C:\Users\JACS\AppData\Local\Temp\1db9b66b-5c12-4bc3-b778-8ffed62fc5f5
+16:23:57,203 WARN  [Tools] Could not delete temporary directory C:\Users\JACS\AppData\Local\Temp\1db9b66b-5c12-4bc3-b778-8ffed62fc5f5

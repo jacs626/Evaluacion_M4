@@ -1,0 +1,37 @@
+Status: OK
+Time Taken: 154
+Size: 32
+Timestamp: Sat Jun 28 16:20:12 CLT 2025
+TestStep: REST Request
+
+----------------- Messages ------------------------------
+
+----------------- Properties ------------------------------
+HTTP Version: HTTP/1.1
+Endpoint: http://localhost:8081
+Method: GET
+StatusCode: 200
+URL: http://localhost:8081/api/usuarios
+
+---------------- Request ---------------------------
+Connection: [Keep-Alive]
+User-Agent: [Apache-HttpClient/4.5.5 (Java/17.0.12)]
+Host: [localhost:8081]
+Accept-Encoding: [gzip,deflate]
+
+GET http://localhost:8081/api/usuarios HTTP/1.1
+Accept-Encoding: gzip,deflate
+Host: localhost:8081
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.5 (Java/17.0.12)
+
+
+---------------- Response --------------------------
+Transfer-Encoding: [chunked]
+Keep-Alive: [timeout=60]
+Connection: [keep-alive]
+#status#: [HTTP/1.1 200 ]
+Date: [Sat, 28 Jun 2025 20:20:12 GMT]
+Content-Type: [application/json;charset=UTF-8]
+
+[{"nombre":"José","peso":75.0}]
