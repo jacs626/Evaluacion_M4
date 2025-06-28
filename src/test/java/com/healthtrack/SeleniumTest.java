@@ -27,7 +27,7 @@ class SeleniumTest {
 
             Thread.sleep(1000);
             WebElement nuevoPeso = driver.findElement(By.tagName("p"));
-            System.out.println("Peso después: " + nuevoPeso.getText());
+            System.out.println("Peso actualizado (deberia ser 80): " + nuevoPeso.getText());
 
         } finally {
             driver.quit();
