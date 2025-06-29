@@ -71,15 +71,15 @@ jobs:
       - name: Ejecutar pruebas de SoapUI
         run: |
           mkdir -p tests/SoapUI/resultados/pipeline/
-          if [ -f tests/SoapUI/HealthTrackSoapUI.jmx ]; then
+          if [ -f tests/SoapUI/HealthTrackSoapUI.xml ]; then
             /opt/soapui/bin/testrunner.sh \
               -r -j \
-              tests/SoapUI/HealthTrackSoapUI.jmx \
+              tests/SoapUI/HealthTrackSoapUI.xml \
               > tests/SoapUI/resultados/pipeline/log.txt 2>&1
           else
-            echo "Archivo HealthTrackSoapUI.jmx no encontrado." > tests/SoapUI/resultados/pipeline/log.txt
+            echo "Archivo HealthTrackSoapUI.xml no encontrado." > tests/SoapUI/resultados/pipeline/log.txt
           fi
-
+          
       - name: Subir reporte SoapUI
         uses: actions/upload-artifact@v4
         with:
