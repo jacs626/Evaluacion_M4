@@ -10,7 +10,13 @@ class SeleniumTest {
 
     @Test
     void pruebaActualizarPeso() throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--user-data-dir=/tmp/chrome-profile");
+
+        WebDriver driver = new ChromeDriver(options);
 
         try {
             driver.get("http://localhost:8081");
