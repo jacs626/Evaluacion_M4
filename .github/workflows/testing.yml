@@ -32,34 +32,7 @@ jobs:
       - name: Correr aplicación en puerto 8081
         run: |
           mvn spring-boot:run -Dspring-boot.run.arguments="--server.port=8081" &
-          sleep 25
-
-      - name: Ejecutar pruebas de Selenium y JUnit
-        run: mvn test
-        continue-on-error: true
-
-      - name: Instalar JMeter
-        run: |
-          wget https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz
-          tar -xzf apache-jmeter-5.6.3.tgz
-          sudo mv apache-jmeter-5.6.3 /opt/jmeter
-          /opt/jmeter/bin/jmeter -v
-
-      - name: Ejecutar pruebas de JMeter
-        run: |
-          mkdir -p tests/JMeter/resultados/pipeline/
-          /opt/jmeter/bin/jmeter \
-            -n \
-            -t tests/JMeter/HealthTrackTestJMeter.jmx \
-            -l tests/JMeter/resultados/pipeline/resultados.jtl \
-            -e \
-            -o tests/JMeter/resultados/pipeline/html
-
-      - name: Subir reporte JMeter
-        uses: actions/upload-artifact@v4
-        with:
-          name: reporte-jmeter
-          path: tests/JMeter/resultados/pipeline/html
+          sleep 20
 
       - name: Instalar SoapUI
         run: |
@@ -92,3 +65,30 @@ jobs:
         with:
           name: log-soapui
           path: tests/SoapUI/resultados/pipeline/log.txt
+
+      - name: Ejecutar pruebas de Selenium y JUnit
+        run: mvn test
+        continue-on-error: true
+
+      - name: Instalar JMeter
+        run: |
+          wget https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz
+          tar -xzf apache-jmeter-5.6.3.tgz
+          sudo mv apache-jmeter-5.6.3 /opt/jmeter
+          /opt/jmeter/bin/jmeter -v
+
+      - name: Ejecutar pruebas de JMeter
+        run: |
+          mkdir -p tests/JMeter/resultados/pipeline/
+          /opt/jmeter/bin/jmeter \
+            -n \
+            -t tests/JMeter/HealthTrackTestJMeter.jmx \
+            -l tests/JMeter/resultados/pipeline/resultados.jtl \
+            -e \
+            -o tests/JMeter/resultados/pipeline/html
+
+      - name: Subir reporte JMeter
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-jmeter
+          path: tests/JMeter/resultados/pipeline/html
