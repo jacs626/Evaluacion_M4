@@ -60,3 +60,24 @@ jobs:
         with:
           name: reporte-jmeter
           path: tests/JMeter/resultados/pipeline/html
+    
+      - name: Instalar SoapUI
+        run: |
+          wget https://s3.amazonaws.com/downloads.eviware/soapuios/5.7.0/SoapUI-5.7.0-linux-bin.tar.gz
+          tar -xzf SoapUI-5.7.0-linux-bin.tar.gz
+          sudo mv SoapUI-5.7.0 /opt/soapui
+          chmod +x /opt/soapui/bin/testrunner.sh
+
+      - name: Ejecutar pruebas de SoapUI
+        run: |
+          mkdir -p tests/SOAPUI/resultados/pipeline/
+          /opt/soapui/bin/testrunner.sh \
+            -r -j \
+            tests/SOAPUI/HealthTrackSoapUI.jmx \
+            > tests/SOAPUI/resultados/pipeline/log.txt 2>&1
+
+      - name: Subir reporte SoapUI
+        uses: actions/upload-artifact@v4
+        with:
+          name: log-soapui
+          path: tests/SOAPUI/resultados/pipeline/log.txt
