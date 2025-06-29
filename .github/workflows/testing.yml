@@ -19,18 +19,20 @@ jobs:
           java-version: "17"
           distribution: "temurin"
 
-      - name: Instalar Chrome
+      - name: Instalar Google Chrome
         run: |
-            sudo apt-get update
-            sudo apt-get install -y google-chrome-stable
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt-get update
+          sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
+          google-chrome --version
 
       - name: Instalar ChromeDriver
-        uses: seleniumhq/selenium-actions/setup-chromedriver@v1
+        uses: nanasess/setup-chromedriver@v2
 
       - name: Correr aplicación en puerto 8081
         run: |
           mvn spring-boot:run -Dspring-boot.run.arguments="--server.port=8081" &
           sleep 25
 
-      - name: Ejecutar pruebas de Selenium y Junit
+      - name: Ejecutar pruebas de Selenium y JUnit
         run: mvn test
